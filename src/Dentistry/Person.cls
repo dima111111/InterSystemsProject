@@ -1,15 +1,15 @@
 /// Descript
 /// 
-Class Dentistry.Person Extends %Persistent
+Class Dentistry.Person Extends %Library.Persistent
 {
 
-Property FIO As %String;
+Property FIO As %Library.String;
 
 Property BirthDate As %Library.Date;
 
-Property Email As %String;
+Property Email As %Library.String;
 
-Property Phone As %String;
+Property Phone As %Library.String;
 
 Storage Default
 {
