@@ -1,8 +1,8 @@
 /// Description
-Class Dentistry.Doctor Extends (%Persistent, Dentistry.Person)
+Class Dentistry.Doctor Extends Dentistry.Person
 {
-	Property ID As %Long [ Required ];
+	Property ID As %Integer [ Required ];
 	Property Experience As %String [ Required ];
 	Property Education As %String [ Required ];
-	Property Spec_ID As %String [ Required ];
+	Property SpecID As %String [ Required ];
 }
