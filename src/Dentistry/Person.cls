@@ -1,8 +1,15 @@
-/// Description
-Class Dentistry.Person Extends (%Populate, %JSON.Adaptor, %XML.Adaptor) [ Abstract ]
+
+Class Dentistry.Person Extends %Persistent
 {
-	Property FIO As %String [ Required ];
-	Property Birth_date As %Date [ Required ];
-	Property Email As %String [ Required ];
-	Property Phone As list Of %String [ Required ];
+	/// Description
+	Property FIO As %String;
+
+	/// Description
+	Property BirthDate As %Date;
+
+	/// Description
+	Property Email As %String;
+
+	/// Description
+	Property Phone As %String;
 }
