@@ -2,17 +2,17 @@
 Class Dentistry.Appointment Extends %Library.Persistent
 {
 
-Property AppointmentID As %Library.BigInt;
+Property idAppointment As %Library.BigInt;
 
-Relationship DoctorID As Dentistry.Doctor [ Cardinality = one, Inverse = idDoctor ];
+Relationship doctorID As Dentistry.Doctor [ Cardinality = one, Inverse = idDoctor ];
 
-Relationship PatientID As Dentistry.Patient [ Cardinality = one, Inverse = idPatient ];
+Relationship patientID As Dentistry.Patient [ Cardinality = one, Inverse = idPatient ];
 
-Property Date As %Library.Date;
+Property date As %Library.Date;
 
-Property Result As %Library.String;
+Property result As %Library.String;
 
-Property Booked As %Library.Boolean;
+Property booked As %Library.Boolean;
 
 Storage Default
 {
@@ -37,6 +37,24 @@ Storage Default
 </Value>
 <Value name="7">
 <Value>Booked</Value>
+</Value>
+<Value name="8">
+<Value>idAppointment</Value>
+</Value>
+<Value name="9">
+<Value>doctorID</Value>
+</Value>
+<Value name="10">
+<Value>patientID</Value>
+</Value>
+<Value name="11">
+<Value>date</Value>
+</Value>
+<Value name="12">
+<Value>result</Value>
+</Value>
+<Value name="13">
+<Value>booked</Value>
 </Value>
 </Data>
 <DataLocation>^Dentistry.AppointmentD</DataLocation>

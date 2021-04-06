@@ -5,11 +5,11 @@ Class Dentistry.Person Extends %Library.Persistent
 
 Property FIO As %Library.String;
 
-Property BirthDate As %Library.Date;
+Property birthDate As %Library.Date;
 
-Property Email As %Library.String;
+Property email As %Library.String;
 
-Property Phone As %Library.String;
+Property phone As %Library.String;
 
 Storage Default
 {
@@ -28,6 +28,15 @@ Storage Default
 </Value>
 <Value name="5">
 <Value>Phone</Value>
+</Value>
+<Value name="6">
+<Value>birthDate</Value>
+</Value>
+<Value name="7">
+<Value>email</Value>
+</Value>
+<Value name="8">
+<Value>phone</Value>
 </Value>
 </Data>
 <DataLocation>^Dentistry.PersonD</DataLocation>

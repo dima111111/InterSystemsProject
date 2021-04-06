@@ -4,9 +4,9 @@ Class Dentistry.Patient Extends Dentistry.Person
 
 Relationship idPatient As Dentistry.Appointment [ Cardinality = many, Inverse = PatientID ];
 
-Property MedicalHistory As %Library.String [ Required ];
+Property medicalHistory As %Library.String [ Required ];
 
-Property AddInfo As %Library.String;
+Property addInfo As %Library.String;
 
 Storage Default
 {
@@ -20,6 +20,12 @@ Storage Default
 </Value>
 <Value name="3">
 <Value>AddInfo</Value>
+</Value>
+<Value name="4">
+<Value>medicalHistory</Value>
+</Value>
+<Value name="5">
+<Value>addInfo</Value>
 </Value>
 </Data>
 <DefaultData>PatientDefaultData</DefaultData>

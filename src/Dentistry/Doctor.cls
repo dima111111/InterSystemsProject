@@ -3,12 +3,13 @@ Class Dentistry.Doctor Extends Dentistry.Person
 {
 
 Relationship idDoctor As Dentistry.Appointment [ Cardinality = many, Inverse = DoctorID ];
+Relationship idDoctor As Dentistry.Schedule [ Cardinality = many, Inverse = DoctorID ];
 
-Property Experience As %Library.String [ Required ];
+Property experience As %Library.String [ Required ];
 
-Property Education As %Library.String [ Required ];
+Property education As %Library.String [ Required ];
 
-Property SpecID As %Library.String [ Required ];
+Property specID As %Library.String [ Required ];
 
 Storage Default
 {
