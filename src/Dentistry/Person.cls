@@ -1,6 +1,4 @@
-/// Descript
-/// 
-Class Dentistry.Person Extends %Library.Persistent
+Class Dentistry.Person Extends %Library.Persistent [ Abstract ]
 {
 
 Property FIO As %Library.String;
