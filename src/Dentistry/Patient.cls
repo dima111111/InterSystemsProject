@@ -1,8 +1,7 @@
-/// Description
 Class Dentistry.Patient Extends Dentistry.Person
 {
 
-Relationship idPatient As Dentistry.Appointment [ Cardinality = many, Inverse = PatientID ];
+Relationship appointments As Dentistry.Appointment [ Cardinality = many, Inverse = patient ];
 
 Property medicalHistory As %Library.String [ Required ];
 

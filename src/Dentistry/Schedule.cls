@@ -3,7 +3,7 @@ Class Dentistry.Schedule Extends %Library.Persistent
 
 Property idSchedule As %Library.BigInt;
 
-Relationship doctorID As Dentistry.Doctor [ Cardinality = one, Inverse = idDoctor ];
+Relationship doctor As Dentistry.Doctor [ Cardinality = one, Inverse = schedules ];
 
 Property date As %Library.Date;
 
@@ -32,6 +32,9 @@ Storage Default
 </Value>
 <Value name="7">
 <Value>doctorID</Value>
+</Value>
+<Value name="8">
+<Value>doctor</Value>
 </Value>
 </Data>
 <DataLocation>^Dentistry.ScheduleD</DataLocation>

@@ -1,15 +1,15 @@
-/// Description
 Class Dentistry.Doctor Extends Dentistry.Person
 {
 
-Relationship idDoctor As Dentistry.Appointment [ Cardinality = many, Inverse = DoctorID ];
-Relationship idDoctor As Dentistry.Schedule [ Cardinality = many, Inverse = DoctorID ];
+Relationship appointments As Dentistry.Appointment [ Cardinality = many, Inverse = doctor ];
+
+Relationship schedules As Dentistry.Schedule [ Cardinality = many, Inverse = doctor ];
 
 Property experience As %Library.String [ Required ];
 
 Property education As %Library.String [ Required ];
 
-Property specID As %Library.String [ Required ];
+Relationship specializations As Dentistry.Specialization [ Cardinality = many, Inverse = doctor ];
 
 Storage Default
 {
@@ -29,6 +29,12 @@ Storage Default
 </Value>
 <Value name="5">
 <Value>idDoctorA</Value>
+</Value>
+<Value name="6">
+<Value>experience</Value>
+</Value>
+<Value name="7">
+<Value>education</Value>
 </Value>
 </Data>
 <DefaultData>DoctorDefaultData</DefaultData>

@@ -1,13 +1,10 @@
 Class Dentistry.Specialization Extends %Library.Persistent
 {
 
-/// Description
-Relationship specID As Dentistry.Doctor [ Cardinality = one, Inverse = idSpec ];
+Relationship doctor As Dentistry.Doctor [ Cardinality = one, Inverse = specializations ];
 
-/// Description
 Property type As %Library.String;
 
-/// Description
 Property description As %Library.String;
 
 Storage Default
@@ -27,6 +24,9 @@ Storage Default
 </Value>
 <Value name="5">
 <Value>description</Value>
+</Value>
+<Value name="6">
+<Value>doctor</Value>
 </Value>
 </Data>
 <DataLocation>^Dentistry.SpecializationD</DataLocation>
