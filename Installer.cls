@@ -24,6 +24,7 @@ XData setup
   </Namespace>
   <Invoke Class="App.Installer" Method="RestWebApp" CheckStatus="true"></Invoke>
   <Invoke Class="App.Installer" Method="ModifyIrisapp" CheckStatus="true"></Invoke>
+  <Invoke Class="App.Installer" Method="SetIrisAppDataSettings" CheckStatus="true"></Invoke>
 
 </Manifest>
 }
@@ -62,6 +63,12 @@ ClassMethod ModifyIrisapp() As %Status
   Write:'sc sc
   Write:sc "Web application "_webName_" has been modified!"_$$$NL
   Zn namespace
+  Return $$$OK
+}
+
+ClassMethod SetIrisAppDataSettings() As %Status
+{
+  set ^%SYS("CSP","DefaultFileCharset") = "utf-8"
   Return $$$OK
 }
 
