@@ -3,7 +3,7 @@ Class Dentistry.Patient Extends Dentistry.Person
 
 Relationship appointments As Dentistry.Appointment [ Cardinality = many, Inverse = patient ];
 
-Property medicalHistory As %Library.String [ Required ];
+Property medicalHistory As %Library.String;
 
 Property addInfo As %Library.String;
 
