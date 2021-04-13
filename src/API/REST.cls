@@ -10,6 +10,7 @@ XData UrlMap [ XMLNamespace = "http://www.intersystems.com/urlmap" ]
 {
 <Routes>
   <Route Url="/test" Method="GET" Call="Test"/>
+  <Route Url="/login" Method="POST" Call="Login"/>
 </Routes>
 }
 
@@ -19,6 +20,13 @@ ClassMethod Test() As %Status
   Set obj = {"msg":"It works","today": (currentDate)}
   Write obj.%ToJSON()
   Return $$$OK
+}
+
+ClassMethod Login() As %Status
+{
+  Set sc = $$$OK
+  // do something
+  Return sc
 }
 
 }
