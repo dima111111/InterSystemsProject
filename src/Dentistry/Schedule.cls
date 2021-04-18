@@ -1,13 +1,9 @@
-Class Dentistry.Schedule Extends %Library.Persistent
+Class Dentistry.Schedule Extends (%Library.Persistent, %Library.Populate)
 {
-
-Property idSchedule As %Library.BigInt;
 
 Relationship doctor As Dentistry.Doctor [ Cardinality = one, Inverse = schedules ];
 
-Property date As %Library.Date;
-
-Property duration As %Library.Integer;
+Property date As %PosixTime;
 
 Storage Default
 {

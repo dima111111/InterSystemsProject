@@ -1,17 +1,11 @@
-Class Dentistry.Appointment Extends %Library.Persistent
+Class Dentistry.Appointment Extends (%Library.Persistent, %Library.Populate)
 {
-
-Property id As %Library.Int [ Identity ];
 
 Relationship doctor As Dentistry.Doctor [ Cardinality = one, Inverse = appointments ];
 
 Relationship patient As Dentistry.Patient [ Cardinality = one, Inverse = appointments ];
 
-Property date As %Library.Date;
-
-Property result As %Library.String;
-
-Property booked As %Library.Boolean;
+Property date As %PosixTime;
 
 Storage Default
 {

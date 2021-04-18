@@ -1,31 +1,37 @@
+import axios from 'axios'
+import { useHistory } from 'react-router-dom';
 
-function signInForm(event) {
+async function signInForm(event) {
 	event.preventDefault()
-	const email = event.target.email.value
-	const dict = {
-		email: email
-	}
-	console.log(email)
-	console.log(dict)
+	const email = event.target.email.value	
+	console.log(email)	
+	localStorage.setItem("user_email", email)
 }
+
 export function SignIn() {
+	const hist = useHistory()
+
+	const email = localStorage.getItem("user_email")
+	if (email !== null) {
+		hist.push("/patient")
+	}
 	return (
 		<div>
-			<form onSubmit={signInForm}>
+			<form onSubmit={(event)=>signInForm(event).then(()=>hist.push("/patient"))}>
 			<div>
+
 				<p>
-				<label>
-					<b>Email</b>
-					<input type="email" placeholder="Enter email" name="email" required />
+				<label><b>Email</b>
+				<input type="text" placeholder="Enter email" name="email" required />
 				</label>
 				</p>
+
 				<p>
 				<button type="submit">
-					Sign In
-				</button>
+					Sign In</button>
 				</p>
 			</div>
-		</form>
+			</form>
 		</div>
 	)
 }

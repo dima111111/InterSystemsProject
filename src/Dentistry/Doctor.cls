@@ -1,4 +1,4 @@
-Class Dentistry.Doctor Extends Dentistry.Person
+Class Dentistry.Doctor Extends (%Library.Persistent, %Populate, Dentistry.Person)
 {
 
 Relationship appointments As Dentistry.Appointment [ Cardinality = many, Inverse = doctor ];
@@ -36,8 +36,27 @@ Storage Default
 <Value name="7">
 <Value>education</Value>
 </Value>
+<Value name="8">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="9">
+<Value>FIO</Value>
+</Value>
+<Value name="10">
+<Value>birthDate</Value>
+</Value>
+<Value name="11">
+<Value>email</Value>
+</Value>
+<Value name="12">
+<Value>phone</Value>
+</Value>
 </Data>
+<DataLocation>^Dentistry.DoctorD</DataLocation>
 <DefaultData>DoctorDefaultData</DefaultData>
+<IdLocation>^Dentistry.DoctorD</IdLocation>
+<IndexLocation>^Dentistry.DoctorI</IndexLocation>
+<StreamLocation>^Dentistry.DoctorS</StreamLocation>
 <Type>%Storage.Persistent</Type>
 }
 

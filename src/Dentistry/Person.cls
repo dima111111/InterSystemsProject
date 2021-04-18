@@ -1,4 +1,4 @@
-Class Dentistry.Person Extends (%Library.Persistent, %Populate) [ Abstract ]
+Class Dentistry.Person [ Abstract ]
 {
 
 Property FIO As %Library.String;
