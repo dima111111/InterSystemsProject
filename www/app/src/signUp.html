@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+	<!-- <meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<script src='App.js'></script> -->
+</head>
+<body>
+	<form onSubmit={signUpForm}>
+		<div>
+			<p>
+			<label><b>FIO</b>
+			<input type="text" placeholder="Enter FIO" name="FIO" required />
+			</label>
+			</p>
+
+			<p>
+			<label><b>Birth Date</b>
+			<input type="date" placeholder="Enter date" name="birthDate" required />
+			</label>
+			</p>
+
+			<p>
+			<label><b>Email</b>
+			<input type="email" placeholder="Enter email" name="email" required />
+			</label>
+			</p>
+
+			<p>
+			<label><b>Phone</b>
+			<input type="text" placeholder="Enter phone" name="phone" required />
+			</label>
+			</p>
+			
+			<p>
+			<button type="submit" onclick="location.href='eachPatient.html'" type="button">
+				Sign Up</button>
+			</p>
+		</div>
+	</form>
+</body>
+</html>
