@@ -66,10 +66,4 @@ ClassMethod ModifyIrisapp() As %Status
   Return $$$OK
 }
 
-ClassMethod SetIrisAppDataSettings() As %Status
-{
-  set ^%SYS("CSP","DefaultFileCharset") = "utf-8"
-  Return $$$OK
-}
-
 }

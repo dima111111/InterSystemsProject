@@ -1,7 +1,7 @@
 Class Dentistry.Appointment Extends %Library.Persistent
 {
 
-Property id As %Library.Int [ Identity ];
+Property id As %Library.Integer [ Identity ];
 
 Relationship doctor As Dentistry.Doctor [ Cardinality = one, Inverse = appointments ];
 

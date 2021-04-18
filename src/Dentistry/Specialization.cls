@@ -1,4 +1,4 @@
-Class Dentistry.Specialization Extends %Library.Persistent
+Class Dentistry.Specialization Extends (%Library.Persistent, %Populate)
 {
 
 Relationship doctor As Dentistry.Doctor [ Cardinality = one, Inverse = specializations ];
@@ -6,6 +6,16 @@ Relationship doctor As Dentistry.Doctor [ Cardinality = one, Inverse = specializ
 Property type As %Library.String;
 
 Property description As %Library.String;
+
+/// Returns ID of the new Object
+ClassMethod InsertSpecialization(type As %String, description As %String) As %Integer
+{
+    &sql(INSERT INTO Dentistry.Specialization(type,description) VALUES(:type, :description))
+    if (SQLCODE=0) {
+        return %ROWID
+    } 
+    return 0
+}
 
 Storage Default
 {

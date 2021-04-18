@@ -1,4 +1,4 @@
-Class Dentistry.Schedule Extends %Library.Persistent
+Class Dentistry.Schedule Extends (%Library.Persistent, %Populate)
 {
 
 Property idSchedule As %Library.BigInt;
