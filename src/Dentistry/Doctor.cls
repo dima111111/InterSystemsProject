@@ -9,8 +9,6 @@ Property experience As %Library.String [ Required ];
 
 Property education As %Library.String [ Required ];
 
-Relationship specializations As Dentistry.Specialization [ Cardinality = many, Inverse = doctor ];
-
 Storage Default
 {
 <Data name="DoctorDefaultData">
