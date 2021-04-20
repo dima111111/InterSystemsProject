@@ -13,7 +13,7 @@ XData UrlMap [ XMLNamespace = "http://www.intersystems.com/urlmap" ]
 	<Route Url="/login" Method="POST" Call="signUp"/>
 	<Route Url="/getDoctors" Method="GET" Call="getDoctors"/>
 	<Route Url="/doctors/:idDoctor" Method="GET" Call="getDoctor"/>
-	<Route Url="/doctors/:idDoctor" Method="GET" Call="getDoctor"/>
+	<!-- <Route Url="/doctors/:idDoctor" Method="GET" Call="getDoctor"/> -->
 	<Route Url="/patient" Method="GET" Call="patientByEmail"/>
 	<Route Url="/appointments" Method="POST" Call="makeAppointment"/>
 
@@ -42,7 +42,7 @@ ClassMethod signUp() As %Status
 	} catch ex {
 		Set errText = $SYSTEM.Status.GetErrorText(ex.AsStatus())
 		Write errText
-		return ex
+		return 1
 	}
 	Return sc
 }
@@ -71,7 +71,7 @@ ClassMethod getDoctor(idDoctor As %Integer) As %Status
 	Do {
 		Set schedule = doctor.schedules.GetNext(.key)
 		If (schedule '= "") {
-			Set sch = {"date": (schedule.date)}
+			Set sch = {"date": (##class(%PosixTime).LogicalToXSD(schedule.date))}
 			Do d.schedules.%Push(sch)
 		}
 	} While (key '= "")

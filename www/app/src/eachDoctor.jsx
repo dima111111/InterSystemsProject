@@ -94,7 +94,7 @@ export function EachDoctor() {
 						<div className={style.patientAppointments}>
 							<div>
 								<span className={style.secondary}>Date: </span>
-								<span className={style.main}>{dtFormat.format(new Date(schedule.date / 1000000))}</span>					
+								<span className={style.main}>{dtFormat.format(new Date(schedule.date))}</span>					
 							</div>
 							<div>
 								<button onClick={()=>makeAppointment(schedule.date)}>
