@@ -9,12 +9,16 @@ export function Header() {
 	const email = localStorage.getItem("user_email")
 	if (email === null) {
 		return(
-			<div>
-				No user login
+			<div className={style.header}>
+				Account 
+				<button type="button">
+					No user login
+				</button>
+				
 			</div>
+
 		)
 	}
-	
 	return (
 		<div className={style.header}>
 			Account 
@@ -24,5 +28,4 @@ export function Header() {
 			 
 		</div>
 	)
-
 }

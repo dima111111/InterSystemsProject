@@ -19,6 +19,7 @@ export function EachPatient() {
 	function makeAppointment() {
 		hist.push("/doctors")
 	}
+
 	const email = localStorage.getItem("user_email")
 	if (email === null) {
 		hist.push("/")
@@ -75,7 +76,7 @@ export function EachPatient() {
 				</h2>
 				<div>
 					{state.appointments.map(appointment =>
-					<div className={style.patientAppointments}>					
+					<div className={style.patientAppointments}>
 						<div>
 							<span className={style.secondary}>Date: </span>
 							<span className={style.main}>{dtFormat.format(new Date(appointment.date / 1000000))}</span>

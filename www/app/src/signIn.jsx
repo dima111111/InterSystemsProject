@@ -11,7 +11,6 @@ async function signInForm(event) {
 
 export function SignIn() {
 	const hist = useHistory()
-
 	const email = localStorage.getItem("user_email")
 	if (email !== null) {
 		hist.push("/patient")
@@ -20,16 +19,16 @@ export function SignIn() {
 		<div>
 			<form onSubmit={(event)=>signInForm(event).then(()=>hist.push("/patient"))}>
 			<div>
-
+				<div>
+					<label>
+						<span className={style.secondary}>Email: </span>
+						<input type="text" placeholder="Enter email" name="email" required />
+					</label>
+				</div>
 				<p>
-				<label><b>Email</b>
-				<input type="text" placeholder="Enter email" name="email" required />
-				</label>
-				</p>
-
-				<p>
-				<button type="submit">
-					Sign In</button>
+					<button type="submit">
+						Sign In
+					</button>
 				</p>
 			</div>
 			</form>

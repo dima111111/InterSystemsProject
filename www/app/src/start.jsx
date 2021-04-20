@@ -18,12 +18,14 @@ export function Start() {
 				Sign Up
 			</button>
 			<h2 className={style.start}>
-				Welcome to Dentistry
+				Welcome to Dentistry 2
 			</h2>
 			<div className="start">
 				Pow
 			</div>
+			<p>
+			© 2021 Bungie, Inc. All rights reserved.
+			</p>
 		</div>
 	)
 }
-
