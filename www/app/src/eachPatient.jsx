@@ -14,21 +14,19 @@ async function getPatientbyEmail(emailPatient) {
 
 
 export function EachPatient() {
-
-
-
 	const hist = useHistory()
+	function makeAppointment() {
+		hist.push("/doctors")
+	}
 	const email = localStorage.getItem("user_email")
 	if (email === null) {
 		hist.push("/")
 	}
-
 	const [state, setState] = React.useState(null)
 	function onlyPatient() {
 		getPatientbyEmail(email).then(response => setState(response))
 	}
 	React.useEffect(onlyPatient, [])
-
 	const dtFormat = new Intl.DateTimeFormat(undefined, {
 		year: "numeric",
 		month: "short",
@@ -83,7 +81,7 @@ export function EachPatient() {
 						</li>)}
 				</ul>
 				<p>
-					<button type="submit">Appointment</button>
+					<button onClick={makeAppointment} type="button">New Appointment</button>
 				</p>
 				
 			</div>
