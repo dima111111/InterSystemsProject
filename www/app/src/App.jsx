@@ -1,53 +1,60 @@
-import {Start} from './start'
-import {SignIn} from './signIn'
-import {SignUp} from './signUp'
-import {Doctors} from './doctors'
-import {EachDoctor} from './eachDoctor'
-import {EachPatient} from './eachPatient'
-import {EachAppointment} from './eachAppointment'
+import { Start } from './start'
+import { SignIn } from './signIn'
+import { SignUp } from './signUp'
+import { Doctors } from './doctors'
+import { EachDoctor } from './eachDoctor'
+import { EachPatient } from './eachPatient'
+import { EachAppointment } from './eachAppointment'
+import { Header } from './Header'
 
 import React from "react";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	useParams
 } from "react-router-dom";
 
 function App() {
 	return (
-		// <EachDoctor />
+
 		<Router>
-		<div>
-			<Switch>
+			<div>
+				<Switch>
 
-			<Route path="/patient">
-				<EachPatient />
-			</Route>
+					<Route path="/patient">
+						<Header />
+						<EachPatient />
+					</Route>
 
-			<Route path="/doctors">
-				<Doctors />
-			</Route>
+					<Route path="/doctors">
+						<Header />
+						<Doctors />
+					</Route>
 
-			<Route path="/doctor/:id">
-				<EachDoctor />
-			</Route>
+					<Route path="/doctor/:id">
+						<Header />
+						<EachDoctor />
+					</Route>
 
-			<Route path="/signIn">
-				<SignIn />
-			</Route>
+					<Route path="/signIn">
+						<Header />
+						<SignIn />
+					</Route>
 
-			<Route path="/signUp">
-				<SignUp />
-			</Route>
+					<Route path="/signUp">
+						<Header />
+						<SignUp />
+					</Route>
 
-			<Route path="/">
-				<Start />
-			</Route>
+					<Route path="/">
+						<Header />
+						<Start />
+					</Route>
 
-			</Switch>
-		</div>
+				</Switch>
+			</div>
 		</Router>
 	)
 }
