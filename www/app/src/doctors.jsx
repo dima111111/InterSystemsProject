@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React from 'react'
+import style from './app.module.css'
 
 function SendAppointment(event) {
 	event.preventDefault()
@@ -13,7 +14,7 @@ async function getDoctors() {
 		method: 'get',
 		url: addr
 	})
-	
+
 
 	console.log(response.data)
 	return (response.data)
@@ -25,33 +26,45 @@ export function Doctors() {
 		getDoctors().then(response => setState(response.doctors))
 	}
 	React.useEffect(onlyDoctors, [])
-	
+
 	return (
-		<div>
-			<div>
-				
-			</div>
+		<div className={style.all}>
 			<table>
 				<thead>
 					<tr>
-					<th>FIO</th>
-					<th>Email</th>
-					<th>Phone</th>
+						<th>
+							<span className={style.secondary}>FIO</span>
+						</th>
+						<th>
+							<span className={style.secondary}>Email</span>
+						</th>
+						<th>
+							<span className={style.secondary}>Phone</span>
+						</th>
 					</tr>
 				</thead>
 				<tbody>
-					{state.map(doctor=>(
+					{state.map(doctor => (
 						<tr>
 							<td>
-								<a href={`/doctor/${doctor.ID}`}>{doctor.FIO}</a>
+								<span className={style.main}>
+									<a href={`/doctor/${doctor.ID}`}>{doctor.FIO}</a>
+								</span>
 							</td>
-							<td>{doctor.email}</td>
-							<td>{doctor.phone}</td>
+							<td>
+								<span className={style.main}>
+								{doctor.email}
+								</span>
+							</td>
+							<td>
+							<span className={style.main}>
+								{doctor.phone}
+								</span>
+							</td>
 						</tr>
 					))}
 				</tbody>
 			</table>
-
 		</div>
 	)
 }

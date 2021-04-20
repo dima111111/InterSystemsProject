@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useHistory } from 'react-router-dom';
+import style from './app.module.css'
 
 export async function sendJsonToAddr(addr, data) {
 	const json = data;
@@ -8,7 +9,6 @@ export async function sendJsonToAddr(addr, data) {
 		url: addr,
 		data: json
 	});
-
 }
 
 async function signUpForm(event) {
@@ -30,7 +30,6 @@ async function signUpForm(event) {
 
 export function SignUp() {
 	const hist = useHistory()
-
 	const email = localStorage.getItem("user_email")
 	if (email !== null) {
 		hist.push("/patient")
@@ -40,33 +39,35 @@ export function SignUp() {
 			<form onSubmit={(event)=>signUpForm(event).then(()=>hist.push("/patient"))}>
 			<div>
 				<p>
-				<label><b>FIO</b>
+				<label>
+					<span className={style.secondary}>FIO: </span>
 				<input type="text" placeholder="Enter FIO" name="FIO" required />
 				</label>
 				</p>
 
 				<p>
-				<label><b>Birth Date</b>
+				<label>
+				<span className={style.secondary}>Birth date: </span>
 				<input type="date" placeholder="Enter date" name="birthDate" required />
 				</label>
 				</p>
 
 				<p>
-				<label><b>Email</b>
+				<label><span className={style.secondary}>Email: </span>
 				<input type="email" placeholder="Enter email" name="email" required />
 				</label>
 				</p>
 
 				<p>
-				<label><b>Phone</b>
+				<label><span className={style.secondary}>Phone: </span>
 				<input type="text" placeholder="Enter phone" name="phone" required />
 				</label>
 				</p>
 				
-				<p>
+				<div>
 				<button type="submit">
 					Sign Up</button>
-				</p>
+				</div>
 			</div>
 			</form>
 		</div>
