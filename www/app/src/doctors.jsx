@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React from 'react'
+import style from './app.module.css'
 
 function SendAppointment(event) {
 	event.preventDefault()
@@ -27,10 +28,7 @@ export function Doctors() {
 	React.useEffect(onlyDoctors, [])
 	
 	return (
-		<div>
-			<div>
-				
-			</div>
+		<div className={style.all}>
 			<table>
 				<thead>
 					<tr>

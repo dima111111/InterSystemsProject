@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useParams } from 'react-router'
 import { useHistory } from 'react-router-dom'
+import style from './app.module.css'
 
 async function getPatientbyEmail(emailPatient) {
 	console.log("get Patient")
@@ -43,47 +44,57 @@ export function EachPatient() {
 		)
 	else
 		return (
-			<div>
-				<p>
-					FIO: {state.patient.FIO}
-				</p>
-				<p>
-					Email: {email}	
-				</p>
-				<p>
-					phone: {state.patient.phone}
-				</p>
-				<p>
-					birthDate: {state.patient.birthDate}
-				</p>
-				<p>
-					medicalHistory: {state.patient.medicalHistory}
-				</p>
-				<p>
-					addInfo: {state.patient.addInfo}
-				</p>
+			<div className={style.all}>
+				<div>
+					<span className={style.secondary}>FIO: </span>
+					<span className={style.main}>{state.patient.FIO}</span>
+				</div>
+				<div>
+					<span className={style.secondary}>Email: </span>
+					<span className={style.main}>{email}</span>
+				</div>
+				<div>
+					<span className={style.secondary}>Phone: </span>
+					<span className={style.main}>{state.patient.phone}</span>
+				</div>
+				<div>
+					<span className={style.secondary}>Date of birth: </span>
+					<span className={style.main}>{state.patient.birthDate}</span>
+				</div>
+				<div>
+					<span className={style.secondary}>Medical history: </span>
+					<span className={style.main}>{state.patient.medicalHistory}</span>
+				</div>
+				<div>
+					<span className={style.secondary}>Additinal information: </span>
+					<span className={style.main}>{state.patient.addInfo}</span>
+				</div>
 
 				<h2>
-					Ваши записи:
+					Your appointments:
 				</h2>
-				<ul>
+				<div>
 					{state.appointments.map(appointment =>
-						<li>
-							<p>
-								Date: {dtFormat.format(new Date(appointment.date/1000000))}
-							</p>
-							<p>
-								FIO Doctor: {appointment.doctor.FIO}
-							</p>
-							<p>
-								Doctor's Phone: {appointment.doctor.phone}
-							</p>
-						</li>)}
-				</ul>
+					<div className={style.patientAppointments}>					
+						<div>
+							<span className={style.secondary}>Date: </span>
+							<span className={style.main}>{dtFormat.format(new Date(appointment.date / 1000000))}</span>
+						</div>
+						<div>
+							<span className={style.secondary}>Doctor: </span>
+							<span className={style.main}>{appointment.doctor.FIO}</span>
+						</div>
+						<div>
+							<span className={style.secondary}>Phone: </span>
+							<span className={style.main}>{appointment.doctor.phone}</span>
+						</div>
+					</div>
+					)}
+				</div>
 				<p>
 					<button onClick={makeAppointment} type="button">New Appointment</button>
 				</p>
-				
+
 			</div>
 		)
 }

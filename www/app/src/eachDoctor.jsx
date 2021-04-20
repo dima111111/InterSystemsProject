@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useParams } from 'react-router'
 import { useHistory } from 'react-router-dom'
+import style from './app.module.css'
 
 export async function sendJsonToAddr(addr, data) {
 	const json = data;
